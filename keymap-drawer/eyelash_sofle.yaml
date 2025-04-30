@@ -260,6 +260,3 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB SAD
   - RGB BRI
-combos:
-- p: [57, 59]
-  k: Layer 3
