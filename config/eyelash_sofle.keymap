@@ -39,14 +39,7 @@
     behaviors {
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        layer3 {
-            bindings = <&mo 3>;
-            key-positions = <57 59>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -61,7 +54,7 @@
 &kp LG(LS(S))  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp BACKSPACE  &mo 1     &kp ENTER        &mo 2   &kp SPACE  &kp RIGHT_ALT  &kp RCTRL  &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&scroll_encoder>;
             display-name = "LAYER0";
         };
 
@@ -104,5 +97,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        layers12ON {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
